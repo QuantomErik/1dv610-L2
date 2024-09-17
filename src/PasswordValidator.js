@@ -10,9 +10,9 @@ export class PasswordValidator {
 
     validate(password) {
         for (const rule of this.rules) {
-            const validationRersult = rule(password)
-            if (!validationRersult.isValid) {
-                return validationRersult.message
+            const validationResult = rule(password)
+            if (!validationResult.isValid) {
+                return validationResult.message
             }
         }
         return 'Password is valid.'
@@ -20,12 +20,18 @@ export class PasswordValidator {
 
     hasDangerousChars = (password) => {
         const dangerousChars = ['<', '>', '/', '\\']
+        const foundDangerousChars = []
+
         for (const char of dangerousChars) {
             if (password.includes(char)) {
-                return {
-                    isValid: false,
-                    message: `Password contains dangerous character: ${char}`
-                }
+                foundDangerousChars.push(char)
+            }
+        }
+
+        if (foundDangerousChars.length > 0) {
+            return {
+                isValid: false,
+                message: `Password contains the following dangerous characters: ${foundDangerousChars.join(', ')}`
             }
         }
         return { isValid: true }

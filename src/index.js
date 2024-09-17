@@ -4,4 +4,4 @@ const validator = new PasswordValidator()
 
 validator.addRule(validator.hasDangerousChars)
 
-console.log(validator.validate('TestPassword1>'))
+console.log(validator.validate('TestPassword1>/<'))
