@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+        input[type="password"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Validator</h1>
+        <form id="form">
+            <label for="password">Enter Password:</label>
+            <input type="text" id="password" name="password">
+           <!--  <input type="submit" value="Validate Password"> -->
+
+            <label for="email">Enter Email:</label>
+            <input type="text" id="email" name="email">
+
+            <input type="submit" value="Validate">
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

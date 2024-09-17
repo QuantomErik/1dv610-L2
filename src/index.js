@@ -1,7 +1,13 @@
 import { PasswordValidator } from './PasswordValidator.js'
+import { EmailValidator } from './EmailValidator.js'
 
-const validator = new PasswordValidator()
+const passwordValidator = new PasswordValidator()
 
-validator.addRule(validator.hasDangerousChars)
+const emailValidator = new EmailValidator()
 
-console.log(validator.validate('TestPassword1>/<'))
+passwordValidator.addRule(passwordValidator.hasDangerousChars)
+emailValidator.addRule(emailValidator.hasAtSymbol)
+
+
+console.log(passwordValidator.validate('TestPassword1>/<'))
+console.log(emailValidator.validate('erik@hotmail.com'))
