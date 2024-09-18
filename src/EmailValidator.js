@@ -14,7 +14,7 @@ export class EmailValidator {
                 return validationResult.message
             }
         }
-        return 'Email is valid.'
+        return 'Email is valid'
     }
 
     hasAtSymbol = (email) => {

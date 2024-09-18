@@ -14,6 +14,7 @@ resultDiv.appendChild(emailResultDiv) */
 
 const passwordValidator = new PasswordValidator()
 passwordValidator.addRule(passwordValidator.hasDangerousChars)
+passwordValidator.addRule(passwordValidator.isLongEnough)
 
 const emailValidator = new EmailValidator()
 emailValidator.addRule(emailValidator.hasAtSymbol)
@@ -33,7 +34,7 @@ form.addEventListener('submit', function(event) {
   if (password !== '') {
     const passwordResult = passwordValidator.validate(password)
     passwordResultDiv.textContent = passwordResult
-    if (passwordResult === 'Password is valid.') {
+    if (passwordResult === 'Password is valid') {
       passwordResultDiv.className = 'success'
     } else {
       passwordResultDiv.className = 'error'
@@ -43,7 +44,7 @@ form.addEventListener('submit', function(event) {
   if (email !== '') {
     const emailResult = emailValidator.validate(email)
     emailResultDiv.textContent = emailResult
-    if (emailResult === 'Email is valid.') {
+    if (emailResult === 'Email is valid') {
       emailResultDiv.className = 'success'
     } else {
       emailResultDiv.className = 'error'

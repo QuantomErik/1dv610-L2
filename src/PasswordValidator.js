@@ -15,7 +15,7 @@ export class PasswordValidator {
                 return validationResult.message
             }
         }
-        return 'Password is valid.'
+        return 'Password is valid'
     }
 
     hasDangerousChars = (password) => {
@@ -35,6 +35,18 @@ export class PasswordValidator {
             }
         }
         return { isValid: true }
+    }
+
+    isLongEnough = (password) => {
+        if (password.length < 8) {
+            return {
+                isValid: false,
+                message: 'Password is too short'
+            }
+        }
+        return {
+            isValid: true
+        }
     }
 
 
