@@ -13,10 +13,17 @@
             max-width: 400px;
             margin: auto;
         }
-        input[type="password"], input[type="submit"] {
+        input[type="text"], input[type="submit"] {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
+        }
+        input[type="text"] {
+            display: block;
+        }
+        label {
+            margin-top: 10px;
+            display: block;
         }
         .result {
             margin-top: 20px;
@@ -36,14 +43,15 @@
         <form id="form">
             <label for="password">Enter Password:</label>
             <input type="text" id="password" name="password">
-           <!--  <input type="submit" value="Validate Password"> -->
 
             <label for="email">Enter Email:</label>
             <input type="text" id="email" name="email">
 
             <input type="submit" value="Validate">
         </form>
-        <div class="result" id="result"></div>
+
+        <div id="passwordResultDiv" class="result"></div>
+        <div id="emailResultDiv" class="result"></div>
     </div>
 
     <script type="module" src="/main.js"></script>
