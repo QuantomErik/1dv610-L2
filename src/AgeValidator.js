@@ -1,4 +1,4 @@
-export class NameValidator {
+export class AgeValidator {
     constructor() {
         this.rules = []
     }
@@ -7,34 +7,22 @@ export class NameValidator {
         this.rules.push(rule)
     }
 
-    validate(name) {
+    validate(age) {
         for (const rule of this.rules) {
-            const validationResult = rule(name)
+            const validationResult = rule(age)
             if (!validationResult.isValid) {
                 return validationResult.message
             }
         }
-        return 'Name is valid'
+        return 'Age is valid'
     }
 
-    isLongEnough = (name) => {
-        if (name.length < 2) {
-            return {
-                isValid: false,
-                message: 'Name is too short'
-            }
-        }
-        return {
-            isValid: true
-        }
-    }
-
-    hasNumber = (name) => {
+    hasNumber = (age) => {
         const regex = /[0-9]/
-        if (regex.test(name)){
+        if (!regex.test(age)) {
             return {
                 isValid: false,
-                message: 'Name cannot include numbers'
+                message: 'Age must include at least one number'
             }
         }
         return {
@@ -42,12 +30,24 @@ export class NameValidator {
         }
     }
 
-    hasSpecialChar = (name) => {
-        const regex = /[-!@#$%^&*()_+=[\]{}|;:,.?~\\^%]/
-        if (regex.test(name)) {
+    hasLetter = (age) => {
+        const regex = /[a-z]/
+        if (regex.test(age)) {
             return {
                 isValid: false,
-                message: 'Name cannot include special characters'
+                message: 'Age cannot include letters'
+            }
+        }
+        return {
+            isValid: true
+        }
+    }
+
+    ageLenght = (age) => {
+        if (age.length > 3) {
+            return {
+                isValid: false,
+                message: 'Age cannot contain more than three numbers'
             }
         }
         return {

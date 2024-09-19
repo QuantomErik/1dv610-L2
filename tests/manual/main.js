@@ -1,6 +1,7 @@
 import { EmailValidator } from '../../src/EmailValidator.js'
 import { PasswordValidator } from '../../src/PasswordValidator.js'
 import { NameValidator } from '../../src/NameValidator.js'
+import { AgeValidator } from '../../src/AgeValidator.js'
 
 
 const form = document.getElementById('form')
@@ -11,6 +12,7 @@ const passwordResultDiv = document.getElementById('passwordResultDiv')
 /* const emailResultDiv = document.createElement('div') */
 const emailResultDiv = document.getElementById('emailResultDiv')
 const nameResultDiv = document.getElementById('nameResultDiv')
+const ageResultDiv = document.getElementById('ageResultDiv')
 /* resultDiv.appendChild(passwordResultDiv)
 resultDiv.appendChild(emailResultDiv) */
 
@@ -33,6 +35,12 @@ emailValidator.addRule(emailValidator.hasDotSymbol)
 const nameValidator = new NameValidator()
 nameValidator.addrule(nameValidator.isLongEnough)
 nameValidator.addrule(nameValidator.hasNumber)
+nameValidator.addrule(nameValidator.hasSpecialChar)
+
+const ageValidator = new AgeValidator()
+ageValidator.addrule(ageValidator.hasNumber)
+ageValidator.addrule(ageValidator.hasLetter)
+ageValidator.addrule(ageValidator.ageLenght)
 
 
 
@@ -42,14 +50,24 @@ form.addEventListener('submit', function(event) {
   const password = document.getElementById('password').value.trim()
   const email = document.getElementById('email').value.trim()
   const name = document.getElementById('name').value.trim()
+  const age = document.getElementById('age').value.trim()
 
   //Clear previous validation results
   passwordResultDiv.textContent = ''
-  emailResultDiv.textContent = ''
-  nameResultDiv.textContent = ''
   passwordResultDiv.className = ''
+
+  emailResultDiv.textContent = ''
   emailResultDiv.className = ''
+
+  nameResultDiv.textContent = ''
   nameResultDiv.className = ''
+
+  ageResultDiv.textContent = ''
+  ageResultDiv.className = ''
+
+  
+  
+  
 
   
 
@@ -80,6 +98,16 @@ form.addEventListener('submit', function(event) {
       nameResultDiv.className = 'success'
     } else {
       nameResultDiv.className = 'error'
+    }
+  }
+
+  if (age !== '') {
+    const ageResult = ageValidator.validate(age)
+    ageResultDiv.textContent = ageResult
+    if (ageResult === 'Age is valid') {
+      ageResultDiv.className = 'success'
+    } else {
+      ageResultDiv.className = 'error'
     }
   }
 
