@@ -32,6 +32,7 @@ emailValidator.addRule(emailValidator.hasDotSymbol)
 
 const nameValidator = new NameValidator()
 nameValidator.addrule(nameValidator.isLongEnough)
+nameValidator.addrule(nameValidator.hasNumber)
 
 
 

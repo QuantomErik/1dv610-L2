@@ -18,10 +18,23 @@ export class NameValidator {
     }
 
     isLongEnough = (name) => {
-        if (name.lenght < 2) {
+        if (name.length < 2) {
             return {
                 isValid: false,
                 message: 'Name is too short'
+            }
+        }
+        return {
+            isValid: true
+        }
+    }
+
+    hasNumber = (name) => {
+        const regex = /[0-9]/
+        if (regex.test(name)){
+            return {
+                isValid: false,
+                message: 'Name cannot include numbers'
             }
         }
         return {
