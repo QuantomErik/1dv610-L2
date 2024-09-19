@@ -15,9 +15,16 @@ resultDiv.appendChild(emailResultDiv) */
 const passwordValidator = new PasswordValidator()
 passwordValidator.addRule(passwordValidator.hasDangerousChars)
 passwordValidator.addRule(passwordValidator.isLongEnough)
+passwordValidator.addRule(passwordValidator.hasNumber)
+passwordValidator.addRule(passwordValidator.hasUpperCase)
+
+
+
 
 const emailValidator = new EmailValidator()
 emailValidator.addRule(emailValidator.hasAtSymbol)
+
+
 
 form.addEventListener('submit', function(event) {
   event.preventDefault()

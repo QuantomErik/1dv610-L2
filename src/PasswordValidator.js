@@ -49,6 +49,32 @@ export class PasswordValidator {
         }
     }
 
+    hasNumber = (password) => {
+        const regex = /\d/
+        if (!regex.test(password)) {
+            return {
+                isValid: false,
+                message: 'The password must contain at least one number'
+            }
+        }
+        return {
+            isValid: true
+        }
+    }
+
+    hasUpperCase = (password) => {
+        const regex = /[A-Z]/
+        if (!regex.test(password)) {
+            return {
+                isValid: false,
+                message: 'The password must contain at least one uppercase letter'
+            }
+        }
+        return {
+            isValid: true
+        }
+    }
+
 
 }
 
