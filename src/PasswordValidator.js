@@ -41,7 +41,7 @@ export class PasswordValidator {
         if (password.length < 8) {
             return {
                 isValid: false,
-                message: 'Password is too short'
+                message: 'Password must be at least eight characters long'
             }
         }
         return {
@@ -62,12 +62,38 @@ export class PasswordValidator {
         }
     }
 
+    hasLowerCase = (password) => {
+        const regex = /[a-z]/
+        if (!regex.test(password)) {
+            return {
+                isValid: false,
+                message: 'The password must contain at least one lowercase letter'
+            }
+        }
+        return {
+            isValid: true
+        }
+    }
+
     hasUpperCase = (password) => {
         const regex = /[A-Z]/
         if (!regex.test(password)) {
             return {
                 isValid: false,
                 message: 'The password must contain at least one uppercase letter'
+            }
+        }
+        return {
+            isValid: true
+        }
+    }
+
+    hasSpecialChar = (password) => {
+        const regex = /[-!@#$%^&*()_+=[\]{}|;:,.?~\\^%]/
+        if (!regex.test(password)) {
+            return {
+                isValid: false,
+                message: 'The password must contain at least one special character'
             }
         }
         return {

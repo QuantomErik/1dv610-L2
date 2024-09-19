@@ -16,7 +16,9 @@ const passwordValidator = new PasswordValidator()
 passwordValidator.addRule(passwordValidator.hasDangerousChars)
 passwordValidator.addRule(passwordValidator.isLongEnough)
 passwordValidator.addRule(passwordValidator.hasNumber)
+passwordValidator.addRule(passwordValidator.hasLowerCase)
 passwordValidator.addRule(passwordValidator.hasUpperCase)
+passwordValidator.addRule(passwordValidator.hasSpecialChar)
 
 
 

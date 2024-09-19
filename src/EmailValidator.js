@@ -21,12 +21,12 @@ export class EmailValidator {
         if (!email.includes('@')) {
             return {
                 isValid: false,
-                message: 'Email must contain the @ symbol.'
+                message: 'Email must contain the @ symbol'
             }
         }
         return { isValid: true }
     }
-    
+
 
 
 }
