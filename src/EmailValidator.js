@@ -24,7 +24,20 @@ export class EmailValidator {
                 message: 'Email must contain the @ symbol'
             }
         }
-        return { isValid: true }
+        return {
+            isValid: true }
+    }
+
+    hasDotSymbol = (email) => {
+        if (!email.includes('.')) {
+            return {
+                isValid: false,
+                message: 'Email must contain the . symbol'
+            }
+        }
+        return {
+            isValid: true
+        }
     }
 
 

@@ -25,6 +25,7 @@ passwordValidator.addRule(passwordValidator.hasSpecialChar)
 
 const emailValidator = new EmailValidator()
 emailValidator.addRule(emailValidator.hasAtSymbol)
+emailValidator.addRule(emailValidator.hasDotSymbol)
 
 
 
