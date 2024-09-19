@@ -1,5 +1,6 @@
 import { EmailValidator } from '../../src/EmailValidator.js'
 import { PasswordValidator } from '../../src/PasswordValidator.js'
+import { NameValidator } from '../../src/NameValidator.js'
 
 
 const form = document.getElementById('form')
@@ -9,6 +10,7 @@ const form = document.getElementById('form')
 const passwordResultDiv = document.getElementById('passwordResultDiv')
 /* const emailResultDiv = document.createElement('div') */
 const emailResultDiv = document.getElementById('emailResultDiv')
+const nameResultDiv = document.getElementById('nameResultDiv')
 /* resultDiv.appendChild(passwordResultDiv)
 resultDiv.appendChild(emailResultDiv) */
 
@@ -28,18 +30,27 @@ emailValidator.addRule(emailValidator.hasAtSymbol)
 emailValidator.addRule(emailValidator.hasDotSymbol)
 
 
+const nameValidator = new NameValidator()
+nameValidator.addrule(nameValidator.isLongEnough)
+
+
 
 form.addEventListener('submit', function(event) {
   event.preventDefault()
 
   const password = document.getElementById('password').value.trim()
   const email = document.getElementById('email').value.trim()
+  const name = document.getElementById('name').value.trim()
 
   //Clear previous validation results
   passwordResultDiv.textContent = ''
   emailResultDiv.textContent = ''
+  nameResultDiv.textContent = ''
   passwordResultDiv.className = ''
   emailResultDiv.className = ''
+  nameResultDiv.className = ''
+
+  
 
   if (password !== '') {
     const passwordResult = passwordValidator.validate(password)
@@ -58,6 +69,16 @@ form.addEventListener('submit', function(event) {
       emailResultDiv.className = 'success'
     } else {
       emailResultDiv.className = 'error'
+    }
+  }
+
+  if (name !== '') {
+    const nameResult = nameValidator.validate(name)
+    nameResultDiv.textContent = nameResult
+    if (nameResult === 'Name is valid') {
+      nameResultDiv.className = 'success'
+    } else {
+      nameResultDiv.className = 'error'
     }
   }
 
