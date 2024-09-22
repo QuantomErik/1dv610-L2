@@ -55,8 +55,81 @@ This document outlines the test scenarios for the Validator module, focusing on 
 
 
 
-## Test Suite: Name validation
-
 ## Test Suite: Email validation
 
+### Test Case 2.1: Successful Email Validation
+- Objective: Verify that a valid email passes the validation rules.
+- Input: Enter email: "erik@example.com"
+- Expected Output: The email should pass all validation checks (contains "@" and ".").
+  Result: "Email is valid"
+
+### Test Case 2.2: Failed Validation - Missing "@" Symbol
+- Objective: Ensure the system detects missing "@" in the email.
+- Input: Enter email: "erikexample.com"
+- Expected Output: The email should fail the "@" symbol check.
+  Result: "Email must contain the @ symbol"
+
+### Test Case 2.3: Failed Validation - Missing "." Symbol
+- Objective: Ensure the system detects missing "." in the email.
+- Input: Enter email: "erik@examplecom"
+- Expected Output: The email should fail the "." symbol check.
+  Result: "Email must contain the . symbol"
+
+
+
+
+
+## Test Suite: Name validation
+
+### Test Case 3.1: Successful Name Validation
+- Objective: Verify that a valid name passes the validation rules.
+- Input: Enter name: "Erik"
+- Expected Output: The name should pass all validation checks (minimum length, no numbers, no special characters).
+  Result: "Name is valid"
+
+### Test Case 3.2: Failed Validation - Name Too Short
+- Objective: Ensure the system detects when the name is too short.
+- Input: Enter name: "E"
+- Expected Output: The name should fail the length check (less than 2 characters).
+  Result: "Name is too short"
+
+### Test Case 3.3: Failed Validation - Name Contains Number
+- Objective: Ensure the system detects numbers in the name.
+- Input: Enter name: "Erik123"
+- Expected Output: The name should fail the number check.
+  Result: "Name cannot include numbers"
+
+### Test Case 3.4: Failed Validation - Name Contains Special Character
+- Objective: Ensure the system detects special characters in the name.
+- Input: Enter name: "Erik!@#"
+- Expected Output: The name should fail the special character check.
+  Result: "Name cannot include special characters"
+
+
+
+
 ## Test Suite: Age validation
+
+### Test Case 4.1: Successful Age Validation
+- Objective: Verify that a valid age passes the validation rules.
+- Input: Enter age: "25"
+- Expected Output: The age should pass all validation checks (only numbers, no letters, max three digits).
+  Result: "Age is valid"
+
+### Test Case 4.2: Failed Validation - Age Contains Letters
+- Objective: Ensure the system detects letters in the age input.
+- Input: Enter age: "25a"
+- Expected Output: The age should fail the check for letters.
+  Result: "Age cannot include letters"
+
+### Test Case 4.3: Failed Validation - Age Contains No Numbers
+- Objective: Ensure the system detects when there are no numbers in the input.
+- Input: Enter age: "abc"
+- Expected Output: The age should fail the check for numbers.
+  Result: "Age must include at least one number"
+
+### Test Case 4.4: Failed Validation - Age Contains More Than Three Digits
+- Objective: Ensure the system detects when the age input has more than three digits.
+- Input: Enter age: "1234"
+- Expected Output: The age should fail the check for length.
+  Result: Result: "Age cannot contain more than three numbers"
