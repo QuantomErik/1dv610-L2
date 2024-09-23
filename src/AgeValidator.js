@@ -43,7 +43,7 @@ export class AgeValidator {
         }
     }
 
-    ageLenght = (age) => {
+    isAgeLenghtValid = (age) => {
         if (age.length > 3) {
             return {
                 isValid: false,

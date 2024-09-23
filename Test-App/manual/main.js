@@ -40,7 +40,7 @@ nameValidator.addrule(nameValidator.hasSpecialChar)
 const ageValidator = new AgeValidator()
 ageValidator.addrule(ageValidator.hasNumber)
 ageValidator.addrule(ageValidator.hasLetter)
-ageValidator.addrule(ageValidator.ageLenght)
+ageValidator.addrule(ageValidator.isAgeLenghtValid)
 
 
 
