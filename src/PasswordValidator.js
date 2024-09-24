@@ -37,7 +37,7 @@ export class PasswordValidator {
         return { isValid: true }
     }
 
-    isLongEnough = (password) => {
+    isPasswordLongEnough = (password) => {
         if (password.length < 8) {
             return {
                 isValid: false,

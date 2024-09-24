@@ -18,7 +18,7 @@ resultDiv.appendChild(emailResultDiv) */
 
 const passwordValidator = new PasswordValidator()
 passwordValidator.addRule(passwordValidator.hasDangerousChars)
-passwordValidator.addRule(passwordValidator.isLongEnough)
+passwordValidator.addRule(passwordValidator.isPasswordLongEnough)
 passwordValidator.addRule(passwordValidator.hasNumber)
 passwordValidator.addRule(passwordValidator.hasLowerCase)
 passwordValidator.addRule(passwordValidator.hasUpperCase)
@@ -33,7 +33,7 @@ emailValidator.addRule(emailValidator.hasDotSymbol)
 
 
 const nameValidator = new NameValidator()
-nameValidator.addrule(nameValidator.isLongEnough)
+nameValidator.addrule(nameValidator.isNameLongEnough)
 nameValidator.addrule(nameValidator.hasNumber)
 nameValidator.addrule(nameValidator.hasSpecialChar)
 

@@ -17,7 +17,7 @@ export class NameValidator {
         return 'Name is valid'
     }
 
-    isLongEnough = (name) => {
+    isNameLongEnough = (name) => {
         if (name.length < 2) {
             return {
                 isValid: false,
