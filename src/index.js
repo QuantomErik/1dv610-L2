@@ -5,7 +5,7 @@ const passwordValidator = new PasswordValidator()
 
 const emailValidator = new EmailValidator()
 
-passwordValidator.addRule(passwordValidator.hasDangerousChars)
+passwordValidator.addRule(passwordValidator.containsDangerousCharactersInPassword)
 passwordValidator.addRule(passwordValidator.hasSpecialChar)
 
 

@@ -17,7 +17,7 @@ const ageResultDiv = document.getElementById('ageResultDiv')
 resultDiv.appendChild(emailResultDiv) */
 
 const passwordValidator = new PasswordValidator()
-passwordValidator.addRule(passwordValidator.hasDangerousChars)
+passwordValidator.addRule(passwordValidator.containsDangerousCharactersInPassword)
 passwordValidator.addRule(passwordValidator.isPasswordLongEnough)
 passwordValidator.addRule(passwordValidator.hasNumber)
 passwordValidator.addRule(passwordValidator.hasLowerCase)

@@ -18,7 +18,7 @@ export class PasswordValidator {
         return 'Password is valid'
     }
 
-    hasDangerousChars = (password) => {
+    containsDangerousCharactersInPassword = (password) => {
         const dangerousChars = ['<', '>', '/', '\\']
         const foundDangerousChars = []
 
