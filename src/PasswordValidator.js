@@ -18,7 +18,7 @@ export class PasswordValidator {
         return 'Password is valid'
     }
 
-    containsDangerousCharactersInPassword = (password) => {
+    #containsDangerousCharactersInPassword = (password) => {
         const dangerousChars = ['<', '>', '/', '\\']
         const foundDangerousChars = []
 
@@ -37,7 +37,11 @@ export class PasswordValidator {
         return { isValid: true }
     }
 
-    isPasswordLongEnough = (password) => {
+    containsDangerousCharactersInPassword = (password) => {
+        return this.#containsDangerousCharactersInPassword(password)
+    }
+
+    #isPasswordLongEnough = (password) => {
         if (password.length < 8) {
             return {
                 isValid: false,
@@ -48,6 +52,11 @@ export class PasswordValidator {
             isValid: true
         }
     }
+
+    isPasswordLongEnough = (password) => {
+        return this.#isPasswordLongEnough(password)
+    }
+
 
     hasNumber = (password) => {
         const regex = /\d/
@@ -88,7 +97,7 @@ export class PasswordValidator {
         }
     }
 
-    hasSpecialChar = (password) => {
+    #hasSpecialChar = (password) => {
         const regex = /[-!@#$%^&*()_+=[\]{}|;:,.?~\\^%]/
         if (!regex.test(password)) {
             return {
@@ -99,6 +108,10 @@ export class PasswordValidator {
         return {
             isValid: true
         }
+    }
+
+    hasSpecialChar = (password) => {
+        return this.#hasSpecialChar(password)
     }
 
 
