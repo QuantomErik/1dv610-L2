@@ -5,16 +5,12 @@ import { AgeValidator } from '../../src/AgeValidator.js'
 
 
 const form = document.getElementById('form')
-/* const resultDiv = document.getElementById('result') */
 
-/* const passwordResultDiv = document.createElement('div') */
 const passwordResultDiv = document.getElementById('passwordResultDiv')
-/* const emailResultDiv = document.createElement('div') */
 const emailResultDiv = document.getElementById('emailResultDiv')
 const nameResultDiv = document.getElementById('nameResultDiv')
 const ageResultDiv = document.getElementById('ageResultDiv')
-/* resultDiv.appendChild(passwordResultDiv)
-resultDiv.appendChild(emailResultDiv) */
+
 
 const passwordValidator = new PasswordValidator()
 passwordValidator.addRule(passwordValidator.containsDangerousCharactersInPassword)
@@ -23,8 +19,6 @@ passwordValidator.addRule(passwordValidator.hasNumber)
 passwordValidator.addRule(passwordValidator.hasLowerCase)
 passwordValidator.addRule(passwordValidator.hasUpperCase)
 passwordValidator.addRule(passwordValidator.hasSpecialChar)
-
-
 
 
 const emailValidator = new EmailValidator()
@@ -65,11 +59,6 @@ form.addEventListener('submit', function(event) {
   ageResultDiv.textContent = ''
   ageResultDiv.className = ''
 
-  
-  
-  
-
-  
 
   if (password !== '') {
     const passwordResult = passwordValidator.validate(password)
@@ -111,27 +100,4 @@ form.addEventListener('submit', function(event) {
     }
   }
 
-  
-
-  /* const passwordResult = passwordValidator.validate(password) */
-
- 
-  /* const emailResult = emailValidator.validate(email) */
-
-
- /*  if (passwordResult === 'Password is valid.') {
-    resultDiv.textContent = passwordResult
-    resultDiv.className = 'success'
-  } else {
-    resultDiv.textContent = passwordResult
-    resultDiv.className = 'error'
-  }
-
-  if (emailResult === 'Email is valid') {
-    resultDiv.textContent = emailResult
-    resultDiv.className = 'success'
-  } else {
-    resultDiv.textContent = emailResult
-    resultDiv.className = 'error'
-  } */
 })
