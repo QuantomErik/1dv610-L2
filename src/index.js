@@ -15,3 +15,5 @@ emailValidator.addRule(emailValidator.hasAtSymbol)
 
 console.log(passwordValidator.validate('TestPassword1>/<'))
 console.log(emailValidator.validate('erik@hotmail.com'))
+console.log(emailValidator.validate('erik@hotmail.com'))
+
