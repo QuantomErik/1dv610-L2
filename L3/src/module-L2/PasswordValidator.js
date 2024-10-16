@@ -2,6 +2,7 @@ export class PasswordValidator {
     constructor() {
         this.rules = []
 
+        // Add all rules on initialization
         this.addRule(this.containsDangerousCharactersInPassword)
         this.addRule(this.isPasswordLongEnough)
         this.addRule(this.hasNumber)

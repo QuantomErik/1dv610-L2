@@ -1,6 +1,11 @@
 export class NameValidator {
     constructor() {
         this.rules = []
+
+        // Add all rules on initialization
+        this.addrule(this.isNameLongEnough)
+        this.addrule(this.hasNumber)
+        this.addrule(this.hasSpecialChar)
     }
 
     addrule(rule) {

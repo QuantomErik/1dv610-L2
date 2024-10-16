@@ -1,6 +1,10 @@
 export class EmailValidator {
     constructor() {
         this.rules = []
+
+        // Add all rules on initialization
+        this.addRule(this.hasAtSymbol)
+        this.addRule(this.hasDotSymbol)
     }
 
     addRule(rule) {

@@ -1,6 +1,11 @@
 export class AgeValidator {
     constructor() {
         this.rules = []
+
+        // Add all rules on initialization
+        this.addrule(this.hasNumber)
+        this.addrule(this.hasLetter)
+        this.addrule(this.isAgeLenghtValid)
     }
 
     addrule(rule) {
