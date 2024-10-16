@@ -1,6 +1,14 @@
 export class PasswordValidator {
     constructor() {
         this.rules = []
+
+        this.addRule(this.containsDangerousCharactersInPassword)
+        this.addRule(this.isPasswordLongEnough)
+        this.addRule(this.hasNumber)
+        this.addRule(this.hasLowerCase)
+        this.addRule(this.hasUpperCase)
+        this.addRule(this.hasSpecialChar)
+
     }
 
 
