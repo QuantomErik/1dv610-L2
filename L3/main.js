@@ -62,4 +62,24 @@ document.getElementById('form').addEventListener('submit', function(event) {
   } else {
     ageResultDiv.className = 'error'
   }
+
+  /* if (
+    passwordResult === 'Password is valid' &&
+    emailResult === 'Email is valid' &&
+    nameResult === 'Name is valid' &&
+    ageResult === 'Age is valid'
+  ) {
+    localStorage.setItem('registeredEmail', email)
+    localStorage.setItem('registeredPassword', password)
+
+    const registrationMessage = document.getElementById('registrationMessage')
+    registrationMessage.textContent = "Registration successful!"
+    registrationMessage.className = 'success'
+
+    setTimeout(() => {
+      window.location.href = '/src/login/login.html';
+    }, 2000)
+  } */
+
+  
 })
