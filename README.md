@@ -6,31 +6,22 @@ Detta projekt är en enkel JavaScript-modul för validering av lösenord, e-post
 
 ## Kodexempel
 
-Här är ett exempel på hur du använder `PasswordValidator`, `EmailValidator`, `NameValidator`, och `AgeValidator` i en applikation:
+Här är ett exempel på hur du använder `PasswordValidator` i en applikation:
 
 ```javascript
 import { PasswordValidator } from './src/PasswordValidator.js'
-import { EmailValidator } from './src/EmailValidator.js'
-import { NameValidator } from './src/NameValidator.js'
-import { AgeValidator } from './src/AgeValidator.js'
 
 const passwordValidator = new PasswordValidator()
-const emailValidator = new EmailValidator()
-const nameValidator = new NameValidator()
-const ageValidator = new AgeValidator()
 
 // Lägga till regler
 passwordValidator.addRule(passwordValidator.containsDangerousCharactersInPassword)
-passwordValidator.addRule(passwordValidator.isPasswordLongEnough)
-emailValidator.addRule(emailValidator.hasAtSymbol)
-nameValidator.addrule(nameValidator.isNameLongEnough)
-ageValidator.addrule(ageValidator.hasNumber)
 
 // Validera data
 console.log(passwordValidator.validate('Password123!'))
-console.log(emailValidator.validate('user@example.com'))
-console.log(nameValidator.validate('Erik'))
-console.log(ageValidator.validate('25'))
+
+// Console output
+Password is valid
+
 ```
 
 
