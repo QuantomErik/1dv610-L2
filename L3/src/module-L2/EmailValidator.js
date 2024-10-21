@@ -12,13 +12,17 @@ export class EmailValidator {
     }
 
     validate(email) {
-        for (const rule of this.rules) {
-            const validationResult = rule(email)
-            if (!validationResult.isValid) {
-                return validationResult.message
+        try {
+            for (const rule of this.rules) {
+                const validationResult = rule(email)
+                if (!validationResult.isValid) {
+                    throw new Error(validationResult.message)
+                }
             }
+            return 'Email is valid'
+        } catch (error) {
+            return error.message
         }
-        return 'Email is valid'
     }
 
     hasAtSymbol = (email) => {

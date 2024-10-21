@@ -13,14 +13,18 @@ export class AgeValidator {
     }
 
     validate(age) {
+        try {
         for (const rule of this.rules) {
             const validationResult = rule(age)
             if (!validationResult.isValid) {
-                return validationResult.message
+                throw new Error(validationResult.message)
             }
         }
         return 'Age is valid'
+    } catch (error) {
+        return error.message
     }
+}
 
     hasNumber = (age) => {
         const regex = /[0-9]/

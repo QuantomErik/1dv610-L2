@@ -13,13 +13,17 @@ export class NameValidator {
     }
 
     validate(name) {
-        for (const rule of this.rules) {
-            const validationResult = rule(name)
-            if (!validationResult.isValid) {
-                return validationResult.message
+        try {
+            for (const rule of this.rules) {
+                const validationResult = rule(name)
+                if (!validationResult.isValid) {
+                    throw new Error(validationResult.message)
+                }
             }
+            return 'Name is valid'
+        } catch (error) {
+            return error.message
         }
-        return 'Name is valid'
     }
 
     isNameLongEnough = (name) => {

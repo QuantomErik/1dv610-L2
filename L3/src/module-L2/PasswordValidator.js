@@ -18,13 +18,17 @@ export class PasswordValidator {
     }
 
     validate(password) {
-        for (const rule of this.rules) {
-            const validationResult = rule(password)
-            if (!validationResult.isValid) {
-                return validationResult.message
+        try {
+            for (const rule of this.rules) {
+                const validationResult = rule(password)
+                if (!validationResult.isValid) {
+                    throw new Error(validationResult.message)
+                }
             }
+            return 'Password is valid'
+        } catch (error) {
+            return error.message
         }
-        return 'Password is valid'
     }
 
     #containsDangerousCharactersInPassword = (password) => {
