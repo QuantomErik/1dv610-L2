@@ -13,6 +13,11 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     if (email === registeredEmail && password === registeredPassword) {
         loginMessage.textContent = 'Login successful!'
         loginMessage.className = 'sucess'
+
+        setTimeout(() => {
+            window.location.href = '/src/userpage/userpage.html'
+        }, 500)
+
     } else {
         loginMessage.textContent = 'Invalid email or password.'
         loginMessage.className = 'error'
