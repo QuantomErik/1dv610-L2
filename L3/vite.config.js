@@ -7,6 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
+        /* main: './src/homepage/homepage.html', */
         homepage: './src/homepage/homepage.html',
         register: './src/registerform/registerform.html',
         login: './src/login/login.html',
