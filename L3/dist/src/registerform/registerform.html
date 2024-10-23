@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+        input[type="text"], input[type="submit"], button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+  <script type="module" crossorigin src="../../assets/register-DiPCLoc6.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-B5Qt9EMX.js">
+</head>
+<body>
+    <div class="container">
+        <h1>User Registration</h1>
+        <form id="form">
+            <label for="password">Enter Password:</label>
+            <input type="text" id="password" name="password">
+
+            <label for="email">Enter Email:</label>
+            <input type="text" id="email" name="email">
+
+            <label for="name">Enter Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="age">Enter Age:</label>
+            <input type="text" id="age" name="age">
+
+            <input type="submit" value="Register">
+        </form>
+
+        <div id="passwordResultDiv" class="result"></div>
+        <div id="emailResultDiv" class="result"></div>
+        <div id="nameResultDiv" class="result"></div>
+        <div id="ageResultDiv" class="result"></div>
+
+        <div id="registrationMessage" class="result"></div>
+    </div>
+
+    <!-- <script type="module" src="/main.js"></script> -->
+        <!-- document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault()
+
+            const email = document.getElementById('email').value
+            const password = document.getElementById('password').value
+
+            // Save information to localStorage
+            localStorage.setItem('registeredEmail', email)
+            localStorage.setItem('registeredPassword', password)
+
+            const registrationMessage = document.getElementById('registrationMessage')
+            registrationMessage.textContent = "Registration successful!"
+            registrationMessage.className = 'success'
+
+            setTimeout(() => {
+                window.location.href = '/src/login/login.html'
+            }, 2000)
+        }) -->
+
+   
+</body>
+</html>
