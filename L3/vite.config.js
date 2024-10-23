@@ -15,4 +15,5 @@ export default defineConfig({
       },
     },
   },
+  publicDir: 'module-L2',
 })
