@@ -6,7 +6,8 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: './src/homepage/homepage.html',
+        main: './index.html',
+        homepage: './src/homepage/homepage.html',
         register: './src/registerform/registerform.html',
         login: './src/login/login.html',
         userpage: './src/userpage/userpage.html',  // Add all your component HTML files
