@@ -16,8 +16,8 @@ export default defineConfig({
     },
   },
   publicDir: 'module-L2',
-})
- */
+}) */
+
 
 import { defineConfig } from 'vite'
 

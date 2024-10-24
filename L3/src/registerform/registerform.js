@@ -1,7 +1,12 @@
-import { PasswordValidator } from "../module-L2/PasswordValidator"
+/* import { PasswordValidator } from "../module-L2/PasswordValidator"
 import { EmailValidator } from "../module-L2/EmailValidator"
 import { NameValidator } from "../module-L2/NameValidator"
-import { AgeValidator } from "../module-L2/AgeValidator"
+import { AgeValidator } from "../module-L2/AgeValidator" */
+
+import { PasswordValidator } from "../module-L2/PasswordValidator.js"
+import { EmailValidator } from "../module-L2/EmailValidator.js"
+import { NameValidator } from "../module-L2/NameValidator.js"
+import { AgeValidator } from "../module-L2/AgeValidator.js"
 
 
 /* import { PasswordValidator } from '../../module-L2/PasswordValidator.js'
