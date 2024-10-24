@@ -88,7 +88,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
     }, 1000)
     } else {
         const registrationMessage = document.getElementById('registrationMessage')
-        registrationMessage.textContent = 'Registration failed! Please correct the erros.'
+        registrationMessage.textContent = 'Registration failed! Please correct the errors.'
         registrationMessage.className = 'error'
     }
 })
