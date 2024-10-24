@@ -1,76 +1,77 @@
-# Validator Module
+# Web Application - Med Validator Module Integration
 
 ## Introduktion
 
-Detta projekt är en enkel JavaScript-modul för validering av lösenord, e-post, namn och ålder. Modulen är utformad för att vara lätt att integrera i webbapplikationer och låter utvecklare lägga till egna regler för validering.
+Denna webbapplikation är ett enkelt system som låter användare registrera sig, logga in och hantera en personlig todo-list. Applikationen implementerar Validator-modulen från [Validator Module](https://github.com/QuantomErik/1dv610-L2.git) för att validera användarinformation som lösenord, e-post, namn och ålder vid registrering. All användardata lagras lokalt i webbläsarens localStorage för att underlätta enkel hantering utan behov av en extern databas.
 
-## Kodexempel
+## Funktioner
 
-Här är ett exempel på hur du använder `PasswordValidator` i en applikation:
+- **Registrering:** Användare kan registrera sig genom att fylla i ett formulär med e-post, lösenord, namn och ålder. Validator-modulen används för att säkerställa att alla fält uppfyller relevanta krav.
+- **Inloggning:** Användare kan logga in med sina registrerade uppgifter. Information hämtas från localStorage.
+- **Todo-list:** Användare kan lägga till, redigera och ta bort uppgifter i en personlig att-göra-lista, som sparas i localStorage.
+- **Utloggning:** Användaren kan logga ut och sessionen återställs.
 
-```javascript
-import { PasswordValidator } from './src/PasswordValidator.js'
+## Teknologier
 
-const passwordValidator = new PasswordValidator()
-
-// Lägga till regler
-passwordValidator.addRule(passwordValidator.containsDangerousCharactersInPassword)
-
-// Validera data
-console.log(passwordValidator.validate('Password123!'))
-
-// Console output
-Password is valid
-
-```
-
+- **Språk:** JavaScript (ES6+)
+- **Frontend:** HTML, CSS
+- **Byggverktyg:** Vite
+- **Valideringsmodul:** [Validator Module](https://github.com/QuantomErik/1dv610-L2.git)
+- **Lagring:** LocalStorage
 
 ## Installation
 
-1. Klona projektet från Github:
-   ```
-   git clone https://github.com/QuantomErik/1dv610-L2.git
-   ```
-2. Navigera till projektmappen:
-   ```
-   cd 1dv610-L2
-   ```
-3. Installera alla nödvändiga beroenden:
-   ```
+Följ dessa steg för att installera och köra projektet lokalt:
+
+1. Klona projektet från GitHub:
+   ```bash
+   git clone https://github.com/QuantomErik/1dv610-L2/tree/L3-branch
+2. Navigera till projektmappen::
+   ```bash
+   cd L3
+3. Installera nödvändiga beroenden:
+   ```bash
    npm install
-   ```
-4. Inkludera filerna från src-mappen i din applikation
-
-## Beroenden, språk, versioner
-- Språk: JavaScript (ES6+)
-- Beroenden:
-- Node.js version: 14+
-
-## Testning
-
-För att köra tester manuellt använder vi Vite för att starta en lokal utvecklingsserver. Följ dessa steg för att testa applikationen manuellt:
-
-1. Installera beroenden om de inte redan är installerade:
-   ```
-   npm install
-   ```
-2. Navigera till testmappen:
-   ```
-   cd Test-App/manual
-   ```
-3. Starta den lokala utvecklingsservern:
-   ```
+4. Starta den lokala utvecklingsservern:
+   ```bash
    npm run dev
-   ```
+# Användning
 
-## Buggrapport/Issues
+## Registrering
+1. Gå till "Register"-sidan.
+2. Fyll i alla fält (e-post, lösenord, namn, ålder).
+3.Validering sker direkt med hjälp av Validator-modulen. Du kommer att få ett felmeddelande om något av fälten inte uppfyller kraven.
+4. Om alla fält är giltiga, registreras användaren och omdirigeras till inloggningssidan.
 
-För närvarande skrivs endast ett felmeddalande ut åt gången per valideringsklass även om valideringen misslyckades på ett antal olika krav simultant inom klassen. Detta är något som skulle kunna förbättras inför nästa release version. 
+## Inloggning
+1. Gå till "Login"-sidan.
+2. Ange din registrerade e-postadress och lösenord.
+3. Vid korrekt inloggning omdirigeras du till din personliga användarsida där du kan hantera din att-göra-lista.
 
-## Versionsnummer och releaser
+## Todo-list
+1. Lägg till nya uppgifter via inputfältet och klicka på "Add Task".
+2. Redigera befintliga uppgifter genom att klicka på "Edit" bredvid en uppgift, göra ändringar och spara.
+3. Ta bort uppgifter genom att klicka på "Delete".
 
-Projektet följer SemVer för versionsnumrering (ex: v1.0.0):
-- v1.0.0: Första stabila versionen
+## Utloggning
+- Logga ut genom att klicka på "Logout"-knappen. Din session avslutas och du omdirigeras till startsidan.
+
+
+# Testning
+För att testa applikationen manuellt, följ dessa steg:
+
+1. Navigera till projektmappen:
+   ```bash
+   cd L3
+2. Starta utvecklingsservern:
+   ```bash
+   npm run dev
+3. Navigera till applikationen i din webbläsare och testa följande:
+   - Registrering av nya användare
+   - Inloggning med korrekt och felaktig data
+   - Hantering av todo-list
+   - Utloggning
+
 
 ## Bidra till projektet
 
@@ -79,7 +80,7 @@ Varmt välkommen att bidra som utvecklare. Om du vill bidra:
 1. Forka projektet till ditt konto.
 2. Klona ditt forkade projekt till din lokala maskin:
    ```
-   git clone https://github.com/yourusername/1dv610-L2.git
+   git clone https://github.com/QuantomErik/1dv610-L2/tree/L3-branch
    ```
 3. Skapa en ny branch för din funktion/bugfix:
    ```
