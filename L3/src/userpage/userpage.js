@@ -16,7 +16,7 @@ document.getElementById('logoutButton').addEventListener('click', function() {
 
 
 
-import { initTodoList } from "./todolist"
+import { initTodoList } from "./todolist.js"
 initTodoList()
 
 
