@@ -72,6 +72,8 @@ För att testa applikationen manuellt, följ dessa steg:
    - Hantering av todo-list
    - Utloggning
 
+alternativt besök https://dashing-shortbread-81a906.netlify.app/
+
 
 ## Bidra till projektet
 
@@ -108,3 +110,7 @@ Detta projekt är licensierat under ISC-licensen. Du är fri att använda, kopie
 - **Krav:** Du måste inkludera originallicensens text i alla kopior eller betydande delar av projektet.
 
 För mer information, se den fullständiga licenstexten i [LICENSE-filen](LICENSE).
+
+
+## Driftsättning
+- Applikation är driftsatt på https://dashing-shortbread-81a906.netlify.app/
