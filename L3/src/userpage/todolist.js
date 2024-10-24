@@ -1,6 +1,6 @@
 class TodoList {
     #todos = []
-    #currentEditIndex = null // Current task being edited
+    #currentEditIndex = null
 
     constructor() {
         this.#loadTasks()
@@ -52,9 +52,6 @@ class TodoList {
             deleteButton.textContent = 'Delete'
             deleteButton.classList.add('delete-btn')
             deleteButton.addEventListener('click', () => this.deleteTask(index))
-            /* deleteButton.addEventListener('click', function() {
-                todoList.deleteTask(index);
-            }); */
 
             li.appendChild(editButton)
             li.appendChild(deleteButton)
